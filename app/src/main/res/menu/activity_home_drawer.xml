@@ -11,7 +11,7 @@
         <item
             android:id="@+id/nav_add_people"
             android:icon="@drawable/ic_person_add_black_24dp"
-            android:title="Friend Request" />
+            android:title="Friend Request"/>
 
     </group>
 
