@@ -142,7 +142,7 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
             @Override
             protected void onBindViewHolder(@NonNull UserViewHOlder holder, int position, @NonNull User model) {
                if (model.getEmail().equals(Common.loggedUser.getEmail())){
-                   holder.txt_user_email.setText(new StringBuilder(model.getEmail()).append(" (me"));
+                   holder.txt_user_email.setText(new StringBuilder(model.getEmail()).append("me"));
                    holder.txt_user_email.setTypeface(holder.txt_user_email.getTypeface(), Typeface.ITALIC);
 
                }

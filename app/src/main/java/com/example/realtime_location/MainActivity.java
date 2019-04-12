@@ -130,6 +130,43 @@ public class MainActivity extends AppCompatActivity {
                             }
                         });
             }
+            else {
+
+                final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+                //check if user exists on Database
+                user_information.orderByKey()
+                        .equalTo(firebaseUser.getUid())
+                        .addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                if(dataSnapshot.getValue() == null){       // if user not exist
+
+                                    if(!dataSnapshot.child(firebaseUser.getUid()).exists()){
+                                        Common.loggedUser =  new User(firebaseUser.getUid(),firebaseUser.getEmail());
+                                        //add to database
+                                        user_information.child(Common.loggedUser.getUid())
+                                                .setValue(Common.loggedUser);
+                                    }
+                                }
+                                else //if user is avaible
+                                {
+                                    Common.loggedUser=dataSnapshot.child(firebaseUser.getUid()).getValue(User.class);
+                                }
+
+                                //Save Uid to storage to update location from background
+
+                                Paper.book().write(Common.USER_UID_SAVE_KEY,Common.loggedUser.getUid());
+                                UpdateToken(firebaseUser);
+                                setupUI();
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
+            }
+
         }
     }
 
@@ -161,5 +198,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
         }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser muser = FirebaseAuth.getInstance().getCurrentUser();
+        if(muser!=null){
+          //  setupUI();
+        }
+
     }
+}
 
