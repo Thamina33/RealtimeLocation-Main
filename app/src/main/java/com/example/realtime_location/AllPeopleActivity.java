@@ -132,7 +132,7 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
     }
 
     private void loadUserList() {
-        Query query =FirebaseDatabase.getInstance().getReference().child(Common.USER_INFORMATION);
+        Query query =FirebaseDatabase.getInstance().getReference("UserInformation");
 
         FirebaseRecyclerOptions<User> options = new FirebaseRecyclerOptions.Builder<User>()
                 .setQuery(query,User.class)
@@ -141,13 +141,13 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
         adapter =new FirebaseRecyclerAdapter<User, UserViewHOlder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull UserViewHOlder holder, int position, @NonNull User model) {
-               if (model.getEmail().equals(Common.loggedUser.getEmail())){
-                   holder.txt_user_email.setText(new StringBuilder(model.getEmail()).append("me"));
-                   holder.txt_user_email.setTypeface(holder.txt_user_email.getTypeface(), Typeface.ITALIC);
+               if (model.getEmail().contains(Common.loggedUser.getEmail())){
+                   holder.txt_user_email.setText(model.getEmail());
+                 //  holder.txt_user_email.setTypeface(holder.txt_user_email.getTypeface(), Typeface.ITALIC);
 
                }
                else {
-                   holder.txt_user_email.setText(new StringBuilder(model.getEmail()));
+                   holder.txt_user_email.setText(model.getEmail());
                }
                //Event
                 holder.setiRecyclerItemClickListener(new IRecyclerItemClickListener() {
@@ -193,7 +193,7 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
     private void startSearch(String text_search) {
         Query query = FirebaseDatabase.getInstance()
                 .getReference(Common.USER_INFORMATION)
-                .orderByChild("name")
+                .orderByChild("email")
                 .startAt(text_search);
 
         FirebaseRecyclerOptions<User> options = new FirebaseRecyclerOptions.Builder<User>()
@@ -203,8 +203,8 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
         searchAdapter =new FirebaseRecyclerAdapter<User, UserViewHOlder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull UserViewHOlder holder, int position, @NonNull User model) {
-                if (model.getEmail().equals(Common.loggedUser.getEmail())){
-                    holder.txt_user_email.setText(new StringBuilder(model.getEmail()).append(" (me"));
+                if (model.getEmail().contains(Common.loggedUser.getEmail())){
+                    holder.txt_user_email.setText(new StringBuilder(model.getEmail()));
                     holder.txt_user_email.setTypeface(holder.txt_user_email.getTypeface(), Typeface.ITALIC);
 
                 }
