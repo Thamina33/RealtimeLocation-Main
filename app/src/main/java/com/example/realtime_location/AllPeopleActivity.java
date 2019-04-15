@@ -22,6 +22,7 @@ import com.example.realtime_location.Interface.IFirebaseLoadDone;
 import com.example.realtime_location.Interface.IRecyclerItemClickListener;
 import com.example.realtime_location.Model.Request;
 import com.example.realtime_location.Model.User;
+import com.example.realtime_location.Remote.lFCMService;
 import com.example.realtime_location.Utils.Common;
 import com.example.realtime_location.ViewHolder.UserViewHOlder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -50,7 +51,10 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
     MaterialSearchBar searchBar;
     List<String>suggestList = new ArrayList<>();
 
-    CompositeDisposable compositeDisposable =new compositeDisposable();
+    CompositeDisposable compositeDisposable =new CompositeDisposable();
+    lFCMService lFCMService ;
+    
+
 
 
     @Override
@@ -242,11 +246,11 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
                             //Create Request
                             Request request = new Request();
                         //create list
-                            Map<String,String> database=new HashMap<>();
-                            database.put(Common.FROM_UID,Common.loggedUser.getUid());
-                            database.put(Common.FROM_NAME,Common.loggedUser.getEmail());
-                            database.put(Common.To_UID,model.getUid());
-                            database.put(Common.To_NAME,model.getEmail());
+                            Map<String,String> dataSend=new HashMap<>();
+                            dataSend.put(Common.FROM_UID,Common.loggedUser.getUid());
+                            dataSend.put(Common.FROM_NAME,Common.loggedUser.getEmail());
+                            dataSend.put(Common.To_UID,model.getUid());
+                            dataSend.put(Common.To_NAME,model.getEmail());
 
                             request.setTo(dataSnapshot.child(model.getUid()).getValue(String.class));
                             request.setData(dataSend);
