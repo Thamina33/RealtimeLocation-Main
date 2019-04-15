@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.example.realtime_location.Interface.IFirebaseLoadDone;
 import com.example.realtime_location.Interface.IRecyclerItemClickListener;
+import com.example.realtime_location.Model.MyResponse;
 import com.example.realtime_location.Model.Request;
 import com.example.realtime_location.Model.User;
 import com.example.realtime_location.Remote.lFCMService;
@@ -40,9 +41,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
+
 
 
 public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoadDone {
@@ -264,7 +267,29 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
 
                             compositeDisposable.add(lFCMService.sendFriendRequestToUser(request)
                                     .subscribeOn(Schedulers.io())
-                                    .observeOn())
+                                    .observeOn(AndroidSchedulers.mainThread())
+                                    .subscribe(new Consumer<MyResponse>() {
+                                        @Override
+                                        public void accept(MyResponse myResponse) throws Exception {
+
+                                            if(myResponse.success==1)
+                                            {
+                                                Toast.makeText(getApplicationContext() , "Request  Sent ", Toast.LENGTH_SHORT)
+                                                        .show();
+                                            }
+
+
+
+                                        }
+                                    }, new Consumer<Throwable>() {
+                                        @Override
+                                        public void accept(Throwable throwable) throws Exception {
+
+                                            Toast.makeText(getApplicationContext() , throwable.getMessage(), Toast.LENGTH_SHORT)
+                                                    .show();
+
+                                        }
+                                    }));
 
                         }
                     }

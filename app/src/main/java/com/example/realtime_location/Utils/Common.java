@@ -20,7 +20,7 @@ public class Common {
     public static User loggedUser;
 
     public static lFCMService getFCMSerice(){
-        return RetrofitClient.getClient("//https://fcm.googlapis.cm/")
+        return RetrofitClient.getClient("https://fcm.googleapis.com/")
                 .create(lFCMService.class);
 
     }
