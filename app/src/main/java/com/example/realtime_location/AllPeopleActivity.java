@@ -73,7 +73,6 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
         lFCMService=Common.getFCMSerice();
 
         //init view
-
         searchBar =(MaterialSearchBar)findViewById(R.id.material_search_bar);
         searchBar.setCardViewElevation(10);
         searchBar.addTextChangeListener(new TextWatcher() {
@@ -157,7 +156,7 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
     }
 
     private void loadUserList() {
-        Query query =FirebaseDatabase.getInstance().getReference("UserInformation");
+        Query query =FirebaseDatabase.getInstance().getReference().child(Common.USER_INFORMATION);
 
         FirebaseRecyclerOptions<User> options = new FirebaseRecyclerOptions.Builder<User>()
                 .setQuery(query,User.class)

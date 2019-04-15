@@ -12,6 +12,7 @@ import android.os.IBinder;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.NotificationCompat;
 
+import com.example.realtime_location.Model.User;
 import com.example.realtime_location.R;
 import com.example.realtime_location.Utils.Common;
 import com.example.realtime_location.Utils.NotificationHelper;
@@ -34,7 +35,24 @@ public class MyFCMService extends FirebaseMessagingService {
                 sendNotificationWithChannel(remoteMessage);
             else
                 sendNotification(remoteMessage);
+            
+            addRequestUserInformation(remoteMessage.getData());
+
         }
+    }
+
+    private void addRequestUserInformation(Map<String, String> data) {
+
+        DatabaseReference friend_Request= FirebaseDatabase.getInstance().getReference(Common.USER_INFORMATION)
+                .child(data.get(Common.To_UID))
+                .child(Common.FRIEND_REQUEST) ;
+
+        User user  = new User();
+        user.setUid(data.get(Common.FROM_UID));
+        user.setEmail(data.get(Common.FROM_NAME));
+        friend_Request.child(user.getUid()).setValue(user);
+
+
     }
 
     private void sendNotification(RemoteMessage remoteMessage) {
