@@ -1,6 +1,10 @@
 package com.example.realtime_location.Utils;
 
 import com.example.realtime_location.Model.User;
+import com.example.realtime_location.Remote.RetrofitClient;
+import com.example.realtime_location.Remote.lFCMService;
+
+import retrofit2.Retrofit;
 
 public class Common {
 
@@ -15,5 +19,10 @@ public class Common {
     public static final String To_NAME = "ToName";
     public static User loggedUser;
 
+    public static lFCMService getFCMSerice(){
+        return RetrofitClient.getClient("//https://fcm.googlapis.cm/")
+                .create(lFCMService.class);
+
+    }
 
 }

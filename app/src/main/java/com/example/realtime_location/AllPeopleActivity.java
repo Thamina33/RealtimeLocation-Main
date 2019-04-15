@@ -40,7 +40,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.schedulers.Schedulers;
+
 
 public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoadDone {
 
@@ -51,8 +54,9 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
     MaterialSearchBar searchBar;
     List<String>suggestList = new ArrayList<>();
 
-    CompositeDisposable compositeDisposable =new CompositeDisposable();
     lFCMService lFCMService ;
+    CompositeDisposable compositeDisposable =new CompositeDisposable();
+
     
 
 
@@ -61,6 +65,9 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_people);
+
+        //init api
+        lFCMService=Common.getFCMSerice();
 
         //init view
 
@@ -255,6 +262,10 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
                             request.setTo(dataSnapshot.child(model.getUid()).getValue(String.class));
                             request.setData(dataSend);
 
+                            compositeDisposable.add(lFCMService.sendFriendRequestToUser(request)
+                                    .subscribeOn(Schedulers.io())
+                                    .observeOn())
+
                         }
                     }
 
@@ -272,7 +283,10 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
             adapter.stopListening();
         if (searchAdapter !=null)
             searchAdapter.stopListening();
+        compositeDisposable.clear();
         super.onStop();
+
+
     }
 
     @Override
