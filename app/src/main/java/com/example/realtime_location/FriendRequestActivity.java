@@ -85,7 +85,7 @@ public class FriendRequestActivity extends AppCompatActivity implements IFirebas
             @Override
             public void onSearchConfirmed(CharSequence text) {
 
-             //   startSearch(text.toString());
+              startSearch(text.toString());
             }
 
             @Override
@@ -105,6 +105,35 @@ public class FriendRequestActivity extends AppCompatActivity implements IFirebas
         loadFriendRequestList();
         loadSearchData();
     }
+
+    private void startSearch(String search_value) {
+        Query query =FirebaseDatabase.getInstance().getReference().child(Common.USER_INFORMATION)
+                .child(Common.loggedUser.getUid())
+                .child(Common.FRIEND_REQUEST)
+                .orderByChild("name")
+                .startAt(search_value);
+
+
+        FirebaseRecyclerOptions<User> options = new FirebaseRecyclerOptions.Builder<User>()
+                .setQuery(query,User.class)
+                .build();
+        searchAdapter = new FirebaseRecyclerAdapter<User, FriendRequestViewHolder>(options) {
+            @Override
+            protected void onBindViewHolder(@NonNull FriendRequestViewHolder holder, int position, @NonNull User model) {
+
+            }
+
+            @NonNull
+            @Override
+            public FriendRequestViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+                return null;
+            }
+        };
+        searchAdapter.startListening();
+        recycler_all_user.setAdapter(searchAdapter);
+
+    }
+
 
     private void loadFriendRequestList() {
         Query query =FirebaseDatabase.getInstance().getReference().child(Common.USER_INFORMATION)
@@ -202,7 +231,29 @@ public class FriendRequestActivity extends AppCompatActivity implements IFirebas
     }
 
     private void loadSearchData() {
-      
+
+
+        final List<String>lstUseremail = new ArrayList<>();
+        DatabaseReference userList = FirebaseDatabase.getInstance().getReference().child(Common.USER_INFORMATION)
+                .child(Common.loggedUser.getUid())
+                .child(Common.FRIEND_REQUEST);
+        userList.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot userSnapShot:dataSnapshot.getChildren()){
+                    User user = userSnapShot.getValue(User.class);
+                    lstUseremail.add(user.getEmail());
+                }
+                firebaseLoadDone.onFirebaseLoadUserNameDone(lstUseremail);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                firebaseLoadDone.onFirebaseLoadFailed(databaseError.getMessage());
+
+            }
+        });
+
     }
 
     @Override

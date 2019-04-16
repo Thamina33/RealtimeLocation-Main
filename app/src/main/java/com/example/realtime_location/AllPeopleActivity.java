@@ -134,6 +134,7 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
     }
 
     private void loadSearchData() {
+
         final List<String>lstUseremail = new ArrayList<>();
         DatabaseReference userList = FirebaseDatabase.getInstance()
                 .getReference(Common.USER_INFORMATION);
@@ -334,7 +335,7 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
 
         searchAdapter =new FirebaseRecyclerAdapter<User, UserViewHOlder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull UserViewHOlder holder, int position, @NonNull User model) {
+            protected void onBindViewHolder(@NonNull UserViewHOlder holder, int position, @NonNull final User model) {
                 if (model.getEmail().contains(Common.loggedUser.getEmail())){
                     holder.txt_user_email.setText(new StringBuilder(model.getEmail()));
                     holder.txt_user_email.setTypeface(holder.txt_user_email.getTypeface(), Typeface.ITALIC);
@@ -347,6 +348,7 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
                 holder.setiRecyclerItemClickListener(new IRecyclerItemClickListener() {
                     @Override
                     public void onItemClickListener(View view, int position) {
+                        showDialogRequest(model);
 
                     }
                 });
