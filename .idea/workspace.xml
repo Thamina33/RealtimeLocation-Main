@@ -66,7 +66,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/HomeActivity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="351">
-              <caret line="76" column="83" selection-start-line="76" selection-start-column="83" selection-end-line="76" selection-end-column="83" />
+              <caret line="76" column="80" selection-start-line="76" selection-start-column="80" selection-end-line="76" selection-end-column="80" />
               <folding>
                 <element signature="e#3088#3262#0" expanded="true" />
                 <element signature="e#3261#3262#0" expanded="true" />
@@ -2264,7 +2264,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="260" />
     <option name="y" value="20" />
     <option name="width" value="1400" />
@@ -2429,7 +2429,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Build Variants" order="0" sideWeight="0.20745921" side_tool="true" visible="true" weight="0.21827957" />
@@ -2570,7 +2570,7 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/HomeActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
-          <caret line="76" column="83" selection-start-line="76" selection-start-column="83" selection-end-line="76" selection-end-column="83" />
+          <caret line="76" column="80" selection-start-line="76" selection-start-column="80" selection-end-line="76" selection-end-column="80" />
           <folding>
             <element signature="e#3088#3262#0" expanded="true" />
             <element signature="e#3261#3262#0" expanded="true" />
