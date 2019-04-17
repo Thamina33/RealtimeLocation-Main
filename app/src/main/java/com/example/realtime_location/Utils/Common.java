@@ -1,8 +1,14 @@
 package com.example.realtime_location.Utils;
 
+
 import com.example.realtime_location.Model.User;
 import com.example.realtime_location.Remote.RetrofitClient;
 import com.example.realtime_location.Remote.lFCMService;
+
+//import java.sql.Timestamp;
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import retrofit2.Retrofit;
 
@@ -28,4 +34,13 @@ public class Common {
 
     }
 
+    public static Date convertTimeStampToDate(long time){
+
+        return new Date(new Timestamp(time).getTime());
+    }
+
+    public static String getDateFormatted(Date date) {
+
+        return new SimpleDateFormat("dd-MM-yyyy HH:mm").format(date).toString();
+    }
 }

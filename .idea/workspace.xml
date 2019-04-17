@@ -94,26 +94,26 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1384" />
+          <entry key="java" value="2429" />
           <entry key="xml" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1384" />
+          <entry key="JAVA" value="2429" />
           <entry key="XML" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="4" />
-          <entry key="xml" value="3" />
+          <entry key="java" value="7" />
+          <entry key="xml" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="4" />
-          <entry key="XML" value="3" />
+          <entry key="JAVA" value="7" />
+          <entry key="XML" value="7" />
         </counts>
       </usages-collector>
     </session>
@@ -159,69 +159,28 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/HomeActivity.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/TrackingActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5265">
-              <caret line="268" column="38" selection-start-line="268" selection-start-column="22" selection-end-line="268" selection-end-column="38" />
+            <state relative-caret-position="418">
+              <caret line="91" column="39" lean-forward="true" selection-start-line="91" selection-start-column="39" selection-end-line="91" selection-end-column="39" />
               <folding>
-                <element signature="method#loadSearchData#0;class#HomeActivity#0" />
+                <element signature="method#registerEventRealtime#0;class#TrackingActivity#0" />
+                <element signature="method#onStop#0;class#TrackingActivity#0" />
+                <element signature="method#onResume#0;class#TrackingActivity#0" />
+                <element signature="docComment;method#onMapReady#0;class#TrackingActivity#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="37" column="58" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/MainActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2700">
-              <caret line="135" column="50" selection-start-line="135" selection-start-column="50" selection-end-line="135" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/Utils/Common.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="2" column="42" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="42" />
-            </state>
-          </provider>
-          <provider editor-type-id="android-manifest" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/debug/res/values/google_maps_api.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="22" column="128" selection-start-line="22" selection-start-column="128" selection-end-line="22" selection-end-column="128" />
+            <state relative-caret-position="607">
+              <caret line="43" column="80" selection-start-line="43" selection-start-column="80" selection-end-line="43" selection-end-column="80" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -2554,15 +2513,17 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/AllPeopleActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/FriendRequestActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/app_bar_home.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/Utils/Common.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/HomeActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/debug/res/values/google_maps_api.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/Model/MyLocation.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/TrackingActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/Utils/Common.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
@@ -2581,8 +2542,33 @@
         <subPane>
           <expand>
             <path>
-              <item name="Realtimelocation" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+              <item name="RealtimeLocation-Main" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="RealtimeLocation-Main" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="RealtimeLocation-Main" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="realtime_location" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RealtimeLocation-Main" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="realtime_location" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="Model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="RealtimeLocation-Main" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="realtime_location" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="Utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -2783,13 +2769,13 @@
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Favorites" order="4" sideWeight="0.5060449" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.46306506" visible="true" weight="0.13118279" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.46306506" visible="true" weight="0.13118279" />
       <window_info id="Structure" order="6" weight="0.25" />
       <window_info id="Captures" order="7" sideWeight="0.4939551" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Android Profiler" order="0" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Android Profiler" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Logcat" order="2" weight="0.3296582" />
-      <window_info anchor="bottom" id="Build" order="3" visible="true" weight="0.30769232" />
+      <window_info anchor="bottom" id="Build" order="3" weight="0.30769232" />
       <window_info anchor="bottom" id="Version Control" order="4" weight="0.3296582" />
       <window_info anchor="bottom" id="Terminal" order="5" />
       <window_info anchor="bottom" id="Message" order="6" />
@@ -2799,6 +2785,7 @@
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="12" weight="0.3298791" />
+      <window_info anchor="right" id="Preview" weight="0.3295699" />
       <window_info anchor="right" id="Device File Explorer" order="0" sideWeight="0.40132305" side_tool="true" weight="0.3296" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
@@ -2831,17 +2818,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/TrackingActivity.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/HomeActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5265">
-          <caret line="268" column="38" selection-start-line="268" selection-start-column="22" selection-end-line="268" selection-end-column="38" />
-          <folding>
-            <element signature="method#loadSearchData#0;class#HomeActivity#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -2849,13 +2825,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2700">
           <caret line="135" column="50" selection-start-line="135" selection-start-column="50" selection-end-line="135" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/Utils/Common.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
@@ -2870,6 +2839,39 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="37" column="58" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/HomeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-8">
+          <caret line="268" column="38" selection-start-line="268" selection-start-column="22" selection-end-line="268" selection-end-column="38" />
+          <folding>
+            <element signature="method#loadSearchData#0;class#HomeActivity#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_all_people.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header_home.xml">
+      <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_tracking.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-designer2" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/debug/res/values/google_maps_api.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
@@ -2877,10 +2879,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/Model/MyLocation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="37" column="58" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
+        <state relative-caret-position="378">
+          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+          <folding>
+            <element signature="e#489#490#0" expanded="true" />
+            <element signature="e#534#535#0" expanded="true" />
+            <element signature="e#574#575#0" expanded="true" />
+            <element signature="e#606#607#0" expanded="true" />
+            <element signature="e#637#638#0" expanded="true" />
+            <element signature="e#682#683#0" expanded="true" />
+            <element signature="e#722#723#0" expanded="true" />
+            <element signature="e#753#754#0" expanded="true" />
+            <element signature="e#783#784#0" expanded="true" />
+            <element signature="e#826#827#0" expanded="true" />
+            <element signature="e#864#865#0" expanded="true" />
+            <element signature="e#909#910#0" expanded="true" />
+            <element signature="e#953#954#0" expanded="true" />
+            <element signature="e#1119#1120#0" expanded="true" />
+            <element signature="e#1147#1148#0" expanded="true" />
+            <element signature="e#1186#1187#0" expanded="true" />
+            <element signature="e#1220#1221#0" expanded="true" />
+            <element signature="e#1273#1274#0" expanded="true" />
+            <element signature="e#1325#1326#0" expanded="true" />
+            <element signature="e#1540#1541#0" expanded="true" />
+            <element signature="e#1585#1586#0" expanded="true" />
+            <element signature="e#1762#1763#0" expanded="true" />
+            <element signature="e#1793#1794#0" expanded="true" />
+            <element signature="e#1842#1843#0" expanded="true" />
+            <element signature="e#1882#1883#0" expanded="true" />
+            <element signature="e#1926#1927#0" expanded="true" />
+            <element signature="e#1965#1966#0" expanded="true" />
+            <element signature="e#2121#2122#0" expanded="true" />
+            <element signature="e#2152#2153#0" expanded="true" />
+            <element signature="e#2200#2201#0" expanded="true" />
+            <element signature="e#2240#2241#0" expanded="true" />
+            <element signature="e#2269#2270#0" expanded="true" />
+            <element signature="e#2296#2297#0" expanded="true" />
+            <element signature="e#2334#2335#0" expanded="true" />
+            <element signature="e#2366#2367#0" expanded="true" />
+            <element signature="e#2411#2412#0" expanded="true" />
+            <element signature="e#2454#2455#0" expanded="true" />
+            <element signature="e#2623#2624#0" expanded="true" />
+            <element signature="e#2654#2655#0" expanded="true" />
+            <element signature="e#2702#2703#0" expanded="true" />
+            <element signature="e#2742#2743#0" expanded="true" />
+            <element signature="e#2779#2780#0" expanded="true" />
+            <element signature="e#2812#2813#0" expanded="true" />
+            <element signature="e#2864#2865#0" expanded="true" />
+            <element signature="e#2908#2909#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/TrackingActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="91" column="39" lean-forward="true" selection-start-line="91" selection-start-column="39" selection-end-line="91" selection-end-column="39" />
+          <folding>
+            <element signature="method#registerEventRealtime#0;class#TrackingActivity#0" />
+            <element signature="method#onStop#0;class#TrackingActivity#0" />
+            <element signature="method#onResume#0;class#TrackingActivity#0" />
+            <element signature="docComment;method#onMapReady#0;class#TrackingActivity#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/Utils/Common.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="607">
+          <caret line="43" column="80" selection-start-line="43" selection-start-column="80" selection-end-line="43" selection-end-column="80" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
