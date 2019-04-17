@@ -20,6 +20,7 @@ public class Common {
     public static final String FRIEND_REQUEST = "FriendRequests";
     public static final String Public_Location ="PublicLocation" ;
     public static User loggedUser;
+    public static User trackingUser;
 
     public static lFCMService getFCMSerice(){
         return RetrofitClient.getClient("https://fcm.googleapis.com/")

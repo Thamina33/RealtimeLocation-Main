@@ -196,13 +196,16 @@ public class HomeActivity extends AppCompatActivity
                 .build();
         adapter = new FirebaseRecyclerAdapter<User, UserViewHOlder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull UserViewHOlder holder, int position, @NonNull User model) {
+            protected void onBindViewHolder(@NonNull UserViewHOlder holder, int position, @NonNull final User model) {
                 holder.txt_user_email.setText(new StringBuilder(model.getEmail()));
 
                holder.setiRecyclerItemClickListener(new IRecyclerItemClickListener() {
                    @Override
                    public void onItemClickListener(View view, int position) {
                        //show tracking
+                       Common.trackingUser = model;
+                       startActivity(new Intent(HomeActivity.this,TrackingActivity.class));
+
                    }
                });
             }
@@ -275,13 +278,15 @@ public class HomeActivity extends AppCompatActivity
                 .build();
         searchAdapter = new FirebaseRecyclerAdapter<User, UserViewHOlder>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull UserViewHOlder holder, int position, @NonNull User model) {
+            protected void onBindViewHolder(@NonNull UserViewHOlder holder, int position, @NonNull final User model) {
                 holder.txt_user_email.setText(new StringBuilder(model.getEmail()));
 
                 holder.setiRecyclerItemClickListener(new IRecyclerItemClickListener() {
                     @Override
                     public void onItemClickListener(View view, int position) {
-                        //show tracking
+                        Common.trackingUser = model;
+                        startActivity(new Intent(HomeActivity.this,TrackingActivity.class));
+
                     }
                 });
             }
