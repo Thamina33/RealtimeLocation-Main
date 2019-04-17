@@ -59,7 +59,9 @@ public class HomeActivity extends AppCompatActivity
 
     MaterialSearchBar searchBar;
     List<String> suggestList = new ArrayList<>();
-    DatabaseReference publicLocation;
+
+
+
     LocationRequest locationRequest;
     FusedLocationProviderClient fusedLocationProviderClient;
 
@@ -149,8 +151,7 @@ public class HomeActivity extends AppCompatActivity
 
         //update Location
 
-        publicLocation = FirebaseDatabase.getInstance().getReference(Common.Public_Location);
-        updateLocation();
+       updateLocation();
         firebaseLoadDone=this;
 
         loadFriendList();
