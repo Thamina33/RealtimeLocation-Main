@@ -204,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser muser = FirebaseAuth.getInstance().getCurrentUser();
         if(muser!=null){
-          //  setupUI();
+          // setupUI();
         }
 
     }
