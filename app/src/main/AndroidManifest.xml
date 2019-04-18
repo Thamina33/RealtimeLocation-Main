@@ -20,7 +20,7 @@
             </intent-filter>
         </service>
 
-        <receiver android:name="Service.MyLocationReceiver"/>
+        <receiver android:name=".Service.MyLocationReceiver"/>
 
         <activity android:name=".AllPeopleActivity" />
         <activity

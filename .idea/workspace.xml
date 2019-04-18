@@ -84,36 +84,37 @@
     <session id="485066266">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.19" value="1" />
-          <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.20" value="2" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.24" value="1" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2432" />
-          <entry key="xml" value="59" />
+          <entry key="java" value="2511" />
+          <entry key="xml" value="71" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2432" />
-          <entry key="XML" value="59" />
+          <entry key="JAVA" value="2511" />
+          <entry key="XML" value="71" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="8" />
-          <entry key="xml" value="8" />
+          <entry key="java" value="9" />
+          <entry key="xml" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="8" />
-          <entry key="XML" value="8" />
+          <entry key="JAVA" value="9" />
+          <entry key="XML" value="9" />
         </counts>
       </usages-collector>
     </session>
@@ -161,50 +162,80 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/HomeActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="62" selection-start-line="62" selection-end-line="62" />
+            <state relative-caret-position="458">
+              <caret line="152" column="7" selection-start-line="152" selection-start-column="7" selection-end-line="152" selection-end-column="7" />
               <folding>
-                <element signature="method#onCreate#0;class#HomeActivity#0" />
                 <element signature="method#loadSearchData#0;class#HomeActivity#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/TrackingActivity.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="41" column="37" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="37" />
-              <folding>
-                <element signature="method#onStop#0;class#TrackingActivity#0" />
-                <element signature="method#onResume#0;class#TrackingActivity#0" />
-                <element signature="docComment;method#onMapReady#0;class#TrackingActivity#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/Utils/Common.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="46" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#loadFriendList#0;class#HomeActivity#0" />
+                <element signature="method#onStop#0;class#HomeActivity#0" />
+                <element signature="method#onPostResume#0;class#HomeActivity#0" />
+                <element signature="method#updateLocation#0;class#HomeActivity#0" />
+                <element signature="method#getPendingIntent#0;class#HomeActivity#0" />
+                <element signature="method#buildLocationRequest#0;class#HomeActivity#0" />
+                <element signature="method#startSearch#0;class#HomeActivity#0" />
+                <element signature="class#10835:11879" />
+                <element signature="method#onBackPressed#0;class#HomeActivity#0" />
+                <element signature="e#12288#12331#0" />
+                <element signature="method#onNavigationItemSelected#0;class#HomeActivity#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/TrackingActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="256">
+              <caret line="88" column="89" selection-start-line="88" selection-start-column="89" selection-end-line="88" selection-end-column="89" />
+              <folding>
+                <element signature="method#registerEventRealtime#0;class#TrackingActivity#0" />
+                <element signature="method#onStop#0;class#TrackingActivity#0" />
+                <element signature="method#onResume#0;class#TrackingActivity#0" />
+                <element signature="docComment;method#onMapReady#0;class#TrackingActivity#0" />
+                <element signature="method#onMapReady#0;class#TrackingActivity#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/Model/MyLocation.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="473">
+              <caret line="118" column="34" selection-start-line="118" selection-start-column="34" selection-end-line="118" selection-end-column="34" />
+              <folding>
+                <element signature="e#446#447#0" expanded="true" />
+                <element signature="e#477#478#0" expanded="true" />
+                <element signature="e#2690#2691#0" expanded="true" />
+                <element signature="e#2730#2731#0" expanded="true" />
+                <element signature="e#2797#2798#0" expanded="true" />
+                <element signature="e#2847#2848#0" expanded="true" />
+                <element signature="e#2889#2890#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="22" column="61" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
+            <state relative-caret-position="159">
+              <caret line="22" column="62" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
             </state>
           </provider>
           <provider editor-type-id="android-manifest" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/Utils/Common.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1188">
+              <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -2538,11 +2569,11 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/debug/res/values/google_maps_api.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/Model/MyLocation.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/TrackingActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/Utils/Common.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/HomeActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/Model/MyLocation.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/TrackingActivity.java" />
       </list>
     </option>
   </component>
@@ -2560,7 +2591,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2597,12 +2627,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="startSearch&#9;PSI&#9;JAVA://com.example.realtime_location.AllPeopleActivity#startSearch" />
+    <property name="SearchEverywhereHistoryKey" value="getDateFormatted&#9;PSI&#9;JAVA://com.example.realtime_location.Utils.Common#getDateFormatted&#10;startSearch&#9;PSI&#9;JAVA://com.example.realtime_location.AllPeopleActivity#startSearch" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk/Sdk" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555485725508" />
     <property name="device.picker.selection" value="4200f1f761681441" />
@@ -2792,23 +2823,22 @@
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Favorites" order="4" sideWeight="0.5060449" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.46306506" visible="true" weight="0.13118279" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.46306506" visible="true" weight="0.12903225" />
       <window_info id="Structure" order="6" weight="0.25" />
       <window_info id="Captures" order="7" sideWeight="0.4939551" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Android Profiler" order="0" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
-      <window_info anchor="bottom" id="Logcat" order="2" weight="0.3296582" />
+      <window_info anchor="bottom" id="Logcat" order="2" weight="0.32867134" />
       <window_info anchor="bottom" id="Build" order="3" weight="0.30769232" />
       <window_info anchor="bottom" id="Version Control" order="4" weight="0.3296582" />
       <window_info anchor="bottom" id="Terminal" order="5" />
       <window_info anchor="bottom" id="Message" order="6" />
       <window_info anchor="bottom" id="Find" order="7" visible="true" weight="0.32983682" />
-      <window_info anchor="bottom" id="Run" order="8" weight="0.30099228" />
+      <window_info anchor="bottom" id="Run" order="8" weight="0.3006993" />
       <window_info anchor="bottom" id="Debug" order="9" weight="0.3997669" />
       <window_info anchor="bottom" id="Cvs" order="10" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="11" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="12" weight="0.3298791" />
-      <window_info anchor="right" id="Preview" weight="0.3295699" />
       <window_info anchor="right" id="Device File Explorer" order="0" sideWeight="0.40132305" side_tool="true" weight="0.3296" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
@@ -2820,6 +2850,7 @@
       <window_info anchor="right" id="Codota" order="8" sideWeight="0.598677" weight="0.3296" />
       <window_info anchor="right" id="Viewer" order="9" side_tool="true" />
       <window_info anchor="right" id="Fabric" order="10" />
+      <window_info anchor="right" id="Preview" order="11" weight="0.3295699" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -2884,100 +2915,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/Model/MyLocation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-          <folding>
-            <element signature="e#489#490#0" expanded="true" />
-            <element signature="e#534#535#0" expanded="true" />
-            <element signature="e#574#575#0" expanded="true" />
-            <element signature="e#606#607#0" expanded="true" />
-            <element signature="e#637#638#0" expanded="true" />
-            <element signature="e#682#683#0" expanded="true" />
-            <element signature="e#722#723#0" expanded="true" />
-            <element signature="e#753#754#0" expanded="true" />
-            <element signature="e#783#784#0" expanded="true" />
-            <element signature="e#826#827#0" expanded="true" />
-            <element signature="e#864#865#0" expanded="true" />
-            <element signature="e#909#910#0" expanded="true" />
-            <element signature="e#953#954#0" expanded="true" />
-            <element signature="e#1119#1120#0" expanded="true" />
-            <element signature="e#1147#1148#0" expanded="true" />
-            <element signature="e#1186#1187#0" expanded="true" />
-            <element signature="e#1220#1221#0" expanded="true" />
-            <element signature="e#1273#1274#0" expanded="true" />
-            <element signature="e#1325#1326#0" expanded="true" />
-            <element signature="e#1540#1541#0" expanded="true" />
-            <element signature="e#1585#1586#0" expanded="true" />
-            <element signature="e#1762#1763#0" expanded="true" />
-            <element signature="e#1793#1794#0" expanded="true" />
-            <element signature="e#1842#1843#0" expanded="true" />
-            <element signature="e#1882#1883#0" expanded="true" />
-            <element signature="e#1926#1927#0" expanded="true" />
-            <element signature="e#1965#1966#0" expanded="true" />
-            <element signature="e#2121#2122#0" expanded="true" />
-            <element signature="e#2152#2153#0" expanded="true" />
-            <element signature="e#2200#2201#0" expanded="true" />
-            <element signature="e#2240#2241#0" expanded="true" />
-            <element signature="e#2269#2270#0" expanded="true" />
-            <element signature="e#2296#2297#0" expanded="true" />
-            <element signature="e#2334#2335#0" expanded="true" />
-            <element signature="e#2366#2367#0" expanded="true" />
-            <element signature="e#2411#2412#0" expanded="true" />
-            <element signature="e#2454#2455#0" expanded="true" />
-            <element signature="e#2623#2624#0" expanded="true" />
-            <element signature="e#2654#2655#0" expanded="true" />
-            <element signature="e#2702#2703#0" expanded="true" />
-            <element signature="e#2742#2743#0" expanded="true" />
-            <element signature="e#2779#2780#0" expanded="true" />
-            <element signature="e#2812#2813#0" expanded="true" />
-            <element signature="e#2864#2865#0" expanded="true" />
-            <element signature="e#2908#2909#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/Utils/Common.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="26" column="36" lean-forward="true" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/TrackingActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="41" column="37" selection-start-line="41" selection-start-column="37" selection-end-line="41" selection-end-column="37" />
-          <folding>
-            <element signature="method#onStop#0;class#TrackingActivity#0" />
-            <element signature="method#onResume#0;class#TrackingActivity#0" />
-            <element signature="docComment;method#onMapReady#0;class#TrackingActivity#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/HomeActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        <state relative-caret-position="458">
+          <caret line="152" column="7" selection-start-line="152" selection-start-column="7" selection-end-line="152" selection-end-column="7" />
           <folding>
-            <element signature="method#onCreate#0;class#HomeActivity#0" />
             <element signature="method#loadSearchData#0;class#HomeActivity#0" />
+            <element signature="method#loadFriendList#0;class#HomeActivity#0" />
+            <element signature="method#onStop#0;class#HomeActivity#0" />
+            <element signature="method#onPostResume#0;class#HomeActivity#0" />
+            <element signature="method#updateLocation#0;class#HomeActivity#0" />
+            <element signature="method#getPendingIntent#0;class#HomeActivity#0" />
+            <element signature="method#buildLocationRequest#0;class#HomeActivity#0" />
+            <element signature="method#startSearch#0;class#HomeActivity#0" />
+            <element signature="class#10835:11879" />
+            <element signature="method#onBackPressed#0;class#HomeActivity#0" />
+            <element signature="e#12288#12331#0" />
+            <element signature="method#onNavigationItemSelected#0;class#HomeActivity#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="22" column="61" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
+        <state relative-caret-position="159">
+          <caret line="22" column="62" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
         </state>
       </provider>
       <provider editor-type-id="android-manifest" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/Utils/Common.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1188">
+          <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/Model/MyLocation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="118" column="34" selection-start-line="118" selection-start-column="34" selection-end-line="118" selection-end-column="34" />
+          <folding>
+            <element signature="e#446#447#0" expanded="true" />
+            <element signature="e#477#478#0" expanded="true" />
+            <element signature="e#2690#2691#0" expanded="true" />
+            <element signature="e#2730#2731#0" expanded="true" />
+            <element signature="e#2797#2798#0" expanded="true" />
+            <element signature="e#2847#2848#0" expanded="true" />
+            <element signature="e#2889#2890#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/realtime_location/TrackingActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="88" column="89" selection-start-line="88" selection-start-column="89" selection-end-line="88" selection-end-column="89" />
+          <folding>
+            <element signature="method#registerEventRealtime#0;class#TrackingActivity#0" />
+            <element signature="method#onStop#0;class#TrackingActivity#0" />
+            <element signature="method#onResume#0;class#TrackingActivity#0" />
+            <element signature="docComment;method#onMapReady#0;class#TrackingActivity#0" />
+            <element signature="method#onMapReady#0;class#TrackingActivity#0" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>

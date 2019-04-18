@@ -54,7 +54,7 @@ public class TrackingActivity extends FragmentActivity implements OnMapReadyCall
     @Override
     protected void onResume() {
         super.onResume();
-        trackingUserLocation.removeEventListener(this);
+        trackingUserLocation.addValueEventListener(this);
     }
 
     /**
@@ -70,7 +70,7 @@ public class TrackingActivity extends FragmentActivity implements OnMapReadyCall
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        //unable xoom ui
+        //Enable xoom ui
         mMap.getUiSettings().setZoomControlsEnabled(true);
 
         //set skin for map
@@ -86,15 +86,12 @@ public class TrackingActivity extends FragmentActivity implements OnMapReadyCall
 
             //Add Marker
 
-            LatLng userMarker = new LatLng(location.getLatitude(),location.getLongtitude());
+            LatLng userMarker = new LatLng(location.getLatitude(),location.getLongitude());
             mMap.addMarker(new MarkerOptions().position(userMarker)
             .title(Common.trackingUser.getEmail())
             .snippet(Common.getDateFormatted(Common.convertTimeStampToDate(location.getTime()))));
 
-            mMap.animateCamera(CameraUpdateFactory.newCameraPosition(CameraPosition.builder()
-                    .target(userMarker)
-                    .zoom(16f).build()));
-
+            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(userMarker,16f));
         }
     }
 

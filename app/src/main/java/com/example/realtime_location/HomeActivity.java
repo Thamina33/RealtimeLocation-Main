@@ -150,7 +150,6 @@ public class HomeActivity extends AppCompatActivity
         recycle_Friend_List.addItemDecoration(new DividerItemDecoration(this, ((LinearLayoutManager) layoutManager).getOrientation()));
 
         //update Location
-
        updateLocation();
         firebaseLoadDone=this;
 

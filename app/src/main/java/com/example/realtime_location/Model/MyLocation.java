@@ -6,7 +6,7 @@ public class MyLocation {
     private Boolean complete , fromMockProvider;
     private String provider;
     private long time , elapsedRealtimeNanos;
-    private double latitude,longtitude;
+    private double latitude,longitude;
 
     public MyLocation(){
 
@@ -116,11 +116,11 @@ public class MyLocation {
         this.latitude = latitude;
     }
 
-    public double getLongtitude() {
-        return longtitude;
+    public double getLongitude() {
+        return longitude;
     }
 
-    public void setLongtitude(double longtitude) {
-        this.longtitude = longtitude;
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 }
