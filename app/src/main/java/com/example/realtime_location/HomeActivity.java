@@ -4,7 +4,9 @@ import android.Manifest;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,6 +15,7 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +34,7 @@ import android.widget.Toast;
 import com.example.realtime_location.Interface.IFirebaseLoadDone;
 import com.example.realtime_location.Interface.IRecyclerItemClickListener;
 import com.example.realtime_location.Model.User;
+import com.example.realtime_location.Model.notificationModel;
 import com.example.realtime_location.Service.MyLocationReceiver;
 import com.example.realtime_location.Utils.Common;
 import com.example.realtime_location.ViewHolder.UserViewHOlder;
@@ -39,6 +43,7 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -46,9 +51,21 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.mancj.materialsearchbar.MaterialSearchBar;
+import com.onesignal.OSNotification;
+import com.onesignal.OSNotificationOpenResult;
+import com.onesignal.OSPermissionSubscriptionState;
+import com.onesignal.OneSignal;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, IFirebaseLoadDone {
@@ -59,8 +76,8 @@ public class HomeActivity extends AppCompatActivity
 
     MaterialSearchBar searchBar;
     List<String> suggestList = new ArrayList<>();
-
-
+    FirebaseAuth mauth ;
+String NotificationId ;
 
     LocationRequest locationRequest;
     FusedLocationProviderClient fusedLocationProviderClient;
@@ -69,6 +86,27 @@ public class HomeActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        OneSignal.startInit(this)
+                .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
+                .setNotificationOpenedHandler(new notificationOpenHandler())
+                .setNotificationReceivedHandler(new OneSignal.NotificationReceivedHandler() {
+                    @Override
+                    public void notificationReceived(OSNotification notification) {
+                        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                       intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT | Intent.FLAG_ACTIVITY_NEW_TASK);
+                       startActivity(intent);
+
+
+                    }
+                })
+                .autoPromptLocation(true)
+                .init();
+
+        OSPermissionSubscriptionState status = OneSignal.getPermissionSubscriptionState();
+        NotificationId = status.getSubscriptionStatus().getUserId();
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -76,7 +114,9 @@ public class HomeActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              startActivity(new Intent(HomeActivity.this,AllPeopleActivity.class));
+
+                TriggerNottification() ;
+
             }
         });
 
@@ -120,6 +160,9 @@ public class HomeActivity extends AppCompatActivity
 
             }
         });
+
+        insertOneDataIntoFirebasae();
+
         searchBar.setOnSearchActionListener(new MaterialSearchBar.OnSearchActionListener() {
             @Override
             public void onSearchStateChanged(boolean enabled) {
@@ -155,6 +198,72 @@ public class HomeActivity extends AppCompatActivity
 
         loadFriendList();
         loadSearchData();
+    }
+
+    private void TriggerNottification() {
+
+
+        DatabaseReference mref ;
+
+        mauth = FirebaseAuth.getInstance();
+        String uid = mauth.getCurrentUser().getUid();
+
+
+        mref = FirebaseDatabase.getInstance().getReference("UserInformation").child(uid).child("emergentcyContact");
+
+        mref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                notificationModel  model = dataSnapshot.getValue(notificationModel.class);
+                String nuid  = model.getNuid();
+                if(!TextUtils.isEmpty(nuid))
+                         {
+
+
+                            try{
+                               // Toast.makeText(getApplicationContext() , nuid , Toast.LENGTH_LONG)
+                                       // .show();
+                                    String email = mauth.getCurrentUser().getEmail();
+
+
+                                JSONObject notificationContent = new JSONObject("{'contents': {'en': '"+email+" is in  Danger !!!'}," +
+                                        "'include_player_ids': ['" + nuid + "'], " +
+                                        "'headings': {'en':'Alert!!!'}, " +
+                                        "'big_picture': ''}");
+                                OneSignal.postNotification(notificationContent, null);
+
+
+                                Toast.makeText(getApplicationContext() , "Notification Sent" ,Toast.LENGTH_LONG).show();
+
+
+                            }
+                            catch (JSONException e) {
+                                e.printStackTrace();
+                                Toast.makeText(getApplicationContext() , e.getMessage() ,Toast.LENGTH_LONG).show();
+                            }
+
+
+
+
+                }
+                else {
+
+
+                    Toast.makeText(getApplicationContext() , "You Didnot Add Any Friend" , Toast.LENGTH_LONG)
+                        .show();
+                }
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
     }
 
     private void loadSearchData() {
@@ -256,12 +365,33 @@ public class HomeActivity extends AppCompatActivity
         return PendingIntent.getBroadcast(this,0,intent,PendingIntent.FLAG_UPDATE_CURRENT);
     }
 
+
     private void buildLocationRequest() {
         locationRequest = new LocationRequest();
         locationRequest.setSmallestDisplacement(10f);
         locationRequest.setFastestInterval(3000);
         locationRequest.setInterval(5000);
         locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+    }
+    private void insertOneDataIntoFirebasae(){
+
+        FirebaseAuth mauth = FirebaseAuth.getInstance();
+        String uid = mauth.getCurrentUser().getUid();
+
+        DatabaseReference mref  = FirebaseDatabase.getInstance().getReference("UserInformation");
+
+        HashMap  map = new HashMap();
+        map.put("nuid", NotificationId);
+
+
+
+        mref.child(uid).child("notificationUid").setValue(map) ;
+
+
+
+
+
+
     }
 
     private void startSearch(String search_value) {
@@ -334,6 +464,13 @@ public class HomeActivity extends AppCompatActivity
             finish();
 
         }
+         else if (id == R.id.nav_settings_people){
+
+            Intent  o = new Intent(getApplicationContext() , SettingsActivity.class);
+            startActivity(o);
+
+        }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -350,4 +487,33 @@ public class HomeActivity extends AppCompatActivity
         Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
 
     }
+    public class notificationOpenHandler implements OneSignal.NotificationOpenedHandler {
+        @Override
+        public void notificationOpened(OSNotificationOpenResult result) {
+            //   String title = result.notification.payload.title;
+            String desc = result.notification.payload.body;
+            //  String f = result.notification.payload.groupKey
+
+            Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT | Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(intent);
+            /*
+           if(desc.equals("Voca_activity")){
+               Intent intent = new Intent(getApplicationContext(), Voca_activity.class);
+               intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT | Intent.FLAG_ACTIVITY_NEW_TASK);
+               startActivity(intent);
+           }
+           else {
+               Intent intent = new Intent(getApplicationContext(), NottificationPage.class);
+               intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT | Intent.FLAG_ACTIVITY_NEW_TASK);
+               startActivity(intent);
+           }
+*/
+
+        }
+
+    }
+
+
+
 }

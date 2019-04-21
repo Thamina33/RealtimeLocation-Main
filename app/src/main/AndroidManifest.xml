@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.realtime_location">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <meta-data
+        android:name="com.onesignal.NotificationOpened.DEFAULT"
+        android:value="DISABLE" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +16,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".loadAllYourFriendHere"></activity>
+        <activity android:name=".SettingsActivity" />
         <activity android:name=".FriendRequestActivity" />
 
         <service android:name=".Service.MyFCMService">
@@ -20,7 +28,7 @@
             </intent-filter>
         </service>
 
-        <receiver android:name=".Service.MyLocationReceiver"/>
+        <receiver android:name=".Service.MyLocationReceiver" />
 
         <activity android:name=".AllPeopleActivity" />
         <activity
@@ -50,7 +58,7 @@
 
         <activity
             android:name=".TrackingActivity"
-            android:label="@string/title_activity_tracking"></activity>
+            android:label="@string/title_activity_tracking" />
     </application>
 
 </manifest>

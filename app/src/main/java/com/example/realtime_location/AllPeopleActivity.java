@@ -204,7 +204,7 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
     private void showDialogRequest(final User model) {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(this,R.style.MyRequestDialog);
         alertDialog.setTitle("Request Friend");
-        alertDialog.setMessage("Do you wamt to sent request friend to "+model.getEmail());
+        alertDialog.setMessage("Do you want to sent request friend to "+model.getEmail());
         alertDialog.setIcon(R.drawable.ic_account_circle_black_24dp);
         alertDialog.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override

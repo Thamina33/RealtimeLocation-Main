@@ -7,6 +7,11 @@ android {
         applicationId "com.example.realtime_location"
         minSdkVersion 16
         targetSdkVersion 28
+        manifestPlaceholders = [
+                onesignal_app_id               : '27669d98-07fe-4515-93c9-74b49aa3489e',
+                // Project number pulled from dashboard, local value is ignored.
+                onesignal_google_project_number: 'REMOTE'
+        ]
         multiDexEnabled true
         versionCode 1
         versionName "1.0"
@@ -50,5 +55,9 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
     implementation 'io.paperdb:paperdb:2.6'
     implementation 'com.android.support:multidex:1.0.3'
+    //one signal notification
+    implementation 'com.onesignal:OneSignal:3.10.1'
+
+
     // for Paper is a fast NoSQL-like storage for Java/Kotlin objects on Android with automatic schema migration support.
 }

@@ -39,6 +39,11 @@ public class MyFCMService extends FirebaseMessagingService {
             addRequestUserInformation(remoteMessage.getData());
 
         }
+
+
+
+
+
     }
 
     private void addRequestUserInformation(Map<String, String> data) {
@@ -47,7 +52,7 @@ public class MyFCMService extends FirebaseMessagingService {
                 .child(data.get(Common.To_UID))
                 .child(Common.FRIEND_REQUEST) ;
 
-        User user  = new User();
+            User user = new User();
         user.setUid(data.get(Common.FROM_UID));
         user.setEmail(data.get(Common.FROM_NAME));
         friend_Request.child(user.getUid()).setValue(user);

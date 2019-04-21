@@ -34,7 +34,7 @@ public class TrackingActivity extends FragmentActivity implements OnMapReadyCall
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        registerEventRealtime();
+        registerEventRealtime(); // app id :27669d98-07fe-4515-93c9-74b49aa3489e
     }
 
     private void registerEventRealtime() {

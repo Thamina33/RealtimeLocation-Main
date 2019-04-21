@@ -3,16 +3,16 @@ package com.example.realtime_location.Model;
 import java.util.HashMap;
 
 public class User {
-    private String uid,email;
+    private String uid,email  ;
     private HashMap<String,User> acceptList; // List user friend
 
-    public User() {
+    public User(String uid, String email) {
     }
 
-    public User(String uid, String email) {
-        this.uid = uid;
-        this.email = email;
-        acceptList = new HashMap<>();
+    public User() {
+        this.uid = this.uid;
+        this.email = this.email;
+        this.acceptList = acceptList;
     }
 
     public String getUid() {

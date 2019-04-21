@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.example.realtime_location.Model.User;
+import com.example.realtime_location.Model.reUser;
 import com.example.realtime_location.Utils.Common;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.IdpResponse;
@@ -29,6 +30,8 @@ import com.karumi.dexter.listener.PermissionDeniedResponse;
 import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
+import com.onesignal.OSPermissionSubscriptionState;
+import com.onesignal.OneSignal;
 
 import org.w3c.dom.Text;
 
@@ -46,11 +49,24 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //init one signal
+        OneSignal.startInit(this)
+                .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
+                .init();
+
+
+
+
         Paper.init(this);
+
+
+
 
         //init firebase
 
         user_information= FirebaseDatabase.getInstance().getReference(Common.USER_INFORMATION);
+
 
         //init provider
         providers = Arrays.asList(
@@ -142,10 +158,21 @@ public class MainActivity extends AppCompatActivity {
                                 if(dataSnapshot.getValue() == null){       // if user not exist
 
                                     if(!dataSnapshot.child(firebaseUser.getUid()).exists()){
-                                        Common.loggedUser =  new User(firebaseUser.getUid(),firebaseUser.getEmail());
+
+                                        OSPermissionSubscriptionState status = OneSignal.getPermissionSubscriptionState();
+                              String    NotificationId = status.getSubscriptionStatus().getUserId();
+
+
+                                        // passisng the user value
+                                        Common.loggedUser =  new User(firebaseUser.getUid(),firebaseUser.getEmail() );
                                         //add to database
                                         user_information.child(Common.loggedUser.getUid())
                                                 .setValue(Common.loggedUser);
+
+
+
+
+
                                     }
                                 }
                                 else //if user is avaible
