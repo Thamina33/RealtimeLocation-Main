@@ -18,7 +18,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".loadAllYourFriendHere"></activity>
+        <activity android:name=".PeriodCalculator"></activity>
+        <activity android:name=".loadAllYourFriendHere" />
         <activity android:name=".SettingsActivity" />
         <activity android:name=".FriendRequestActivity" />
 
