@@ -28,6 +28,7 @@ import com.example.realtime_location.Utils.Common;
 import com.example.realtime_location.ViewHolder.UserViewHOlder;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -60,7 +61,9 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
     lFCMService lFCMService ;
     CompositeDisposable compositeDisposable =new CompositeDisposable();
 
-    
+    String uid ;
+    FirebaseAuth mauth ;
+
 
 
 
@@ -68,6 +71,10 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_people);
+
+        mauth = FirebaseAuth.getInstance();
+        uid = mauth.getUid() ;
+
 
         //init api
         lFCMService=Common.getFCMSerice();
@@ -157,7 +164,7 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
     }
 
     private void loadUserList() {
-        Query query =FirebaseDatabase.getInstance().getReference().child(Common.USER_INFORMATION);
+        Query query =FirebaseDatabase.getInstance().getReference().child("UserInformation");
 
         FirebaseRecyclerOptions<User> options = new FirebaseRecyclerOptions.Builder<User>()
                 .setQuery(query,User.class)
@@ -166,9 +173,9 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
         adapter =new FirebaseRecyclerAdapter<User, UserViewHOlder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull UserViewHOlder holder, int position, @NonNull final User model) {
-               if (model.getEmail().contains(Common.loggedUser.getEmail())){
-                   holder.txt_user_email.setText(model.getEmail());
-                 //  holder.txt_user_email.setTypeface(holder.txt_user_email.getTypeface(), Typeface.ITALIC);
+               if (model.getEmail().contains(uid)){
+                  holder.txt_user_email.setText(model.getEmail() + " (Me)");
+                  holder.txt_user_email.setTypeface(holder.txt_user_email.getTypeface(), Typeface.ITALIC);
 
                }
                else {
@@ -241,6 +248,8 @@ public class AllPeopleActivity extends AppCompatActivity implements IFirebaseLoa
 
         alertDialog.show();//don't forget it
     }
+
+
 
     private void sendFriendRequest(final User model) {
         //get token to sent
